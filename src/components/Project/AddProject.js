@@ -22,9 +22,9 @@ class AddProject extends Component {
 
     // life cycle hooks
     componentWillReceiveProps(nextProps) {
-        if (nextProps.errors) {
+        if (nextProps.whoopsies) {
             this.setState({
-                errors: nextProps.errors
+                errors: nextProps.whoopsies
             });
         }
     }
@@ -91,11 +91,11 @@ class AddProject extends Component {
 
 AddProject.propTypes = {
     createProject: PropTypes.func.isRequired,
-    errors: PropTypes.object.isRequired
+    whoopsies: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-    errors: state.errors
+    whoopsies: state.errors
 });
 
 export default connect(
