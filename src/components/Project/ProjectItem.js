@@ -8,8 +8,6 @@ class ProjectItem extends Component {
 
     constructor() {
         super();
-
-        this.onDeleteClick = this.onDeleteClick.bind(this);
     }
 
     onDeleteClick = id => {
@@ -41,7 +39,7 @@ class ProjectItem extends Component {
                                         <i className="fa fa-edit pr-1">Update Project Info</i>
                                     </li>
                                 </Link>
-                                <li className="list-group-item delete" onClick={this.onDeleteClick}>
+                                <li className="list-group-item delete" onClick={this.onDeleteClick.bind(this,project.projectIdentifier)}>
                                     <i className="fa fa-minus-circle pr-1">Delete Project</i>
                                 </li>
                             </ul>
@@ -54,7 +52,7 @@ class ProjectItem extends Component {
 }
 
 ProjectItem.propTypes = {
-    deleteProject = PropTypes.func.isRequired
+    deleteProject: PropTypes.func.isRequired
 }
 
 export default connect(
