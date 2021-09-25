@@ -66,7 +66,7 @@ class AddProject extends Component {
                                         })} 
                                             placeholder="Project Name" 
                                             name="projectName" 
-                                            value={this.state.projectName} 
+                                            value={this.state.projectName || ''} 
                                             onChange={this.onChange} />
                                         {errors.projectName && (
                                             <div className="invalid-feedback">
@@ -82,7 +82,7 @@ class AddProject extends Component {
                                             })} 
                                             placeholder="Unique Project ID" 
                                             name="projectIdentifier" 
-                                            value={this.state.projectIdentifier} 
+                                            value={this.state.projectIdentifier || ''} 
                                             onChange={this.onChange} />
                                         {errors.projectIdentifier && (
                                             <div className="invalid-feedback">
@@ -97,7 +97,7 @@ class AddProject extends Component {
                                             })} 
                                             placeholder="Project Description" 
                                             name="description" 
-                                            value={this.state.description} 
+                                            value={this.state.description || ''} 
                                             onChange={this.onChange} ></textarea>
                                         {errors.description && (
                                             <div className="invalid-feedback">
@@ -107,11 +107,21 @@ class AddProject extends Component {
                                     </div>
                                     <h6>Start Date</h6>
                                     <div className="form-group">
-                                        <input type="date" className="form-control form-control-lg" name="start_date" value={this.state.start_date} onChange={this.onChange} />
+                                        <input 
+                                            type="date" 
+                                            className="form-control form-control-lg" 
+                                            name="start_date" 
+                                            value={this.state.start_date || ''} 
+                                            onChange={this.onChange} />
                                     </div>
                                     <h6>Estimated End Date</h6>
                                     <div className="form-group">
-                                        <input type="date" className="form-control form-control-lg" name="end_date" value={this.state.end_date} onChange={this.onChange} />
+                                        <input 
+                                            type="date" 
+                                            className="form-control form-control-lg" 
+                                            name="end_date" 
+                                            value={this.state.end_date || ''} 
+                                            onChange={this.onChange} />
                                     </div>
 
                                     <input type="submit" className="btn btn-primary btn-block mt-4" />
