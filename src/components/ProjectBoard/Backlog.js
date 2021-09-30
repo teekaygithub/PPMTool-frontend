@@ -17,7 +17,7 @@ class Backlog extends Component {
                                 <h3>TO DO</h3>
                             </div>
                         </div>
-                        {tasks}
+                        {tasks.filter(x => x.props.project_task.status === "TO_DO")}
                     </div>
                     <div className="col-md-4">
                         <div className="card text-center mb-2">
@@ -25,6 +25,7 @@ class Backlog extends Component {
                                 <h3>In Progress</h3>
                             </div>
                         </div>
+                        {tasks.filter(x => x.props.project_task.status === "IN_PROGRESS")}
                     </div>
                     <div className="col-md-4">
                         <div className="card text-center mb-2">
@@ -32,6 +33,7 @@ class Backlog extends Component {
                                 <h3>Done</h3>
                             </div>
                         </div>
+                        {tasks.filter(x => x.props.project_task.status === "DONE")}
                     </div>
                 </div>
             </div>

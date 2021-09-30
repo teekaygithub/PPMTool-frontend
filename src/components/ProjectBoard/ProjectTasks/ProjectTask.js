@@ -3,10 +3,13 @@ import React, {Component} from 'react';
 class ProjectTask extends Component {
     render() {
         const {project_task} = this.props;
+        let priorityString = ["HIGH", "HIGH", "MEDIUM", "LOW"];
+        let priorityClasses = ["bg-danger", "bg-danger", "bg-warning", "bg-info"];
+
         return (
             <div className="card mb-1 bg-light">
-                <div className="card-header text-primary">
-                    ID: {project_task.projectSequence} -- Priority: {project_task.priority}
+                <div className={`card-header text-primary text-light ${priorityClasses[project_task.priority]}`}>
+                    ID: {project_task.projectSequence} -- Priority: {priorityString[project_task.priority]}
                 </div>
                 <div className="card-body bg-light">
                     <h5 className="card-title">{project_task.summary}</h5>
