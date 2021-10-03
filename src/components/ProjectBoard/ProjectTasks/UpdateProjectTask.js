@@ -104,7 +104,7 @@ class UpdateProjectTask extends Component {
                                     <input 
                                         type="text" 
                                         className={classnames("form-control form-control-lg", {
-                                            "is-valid": errors.summary
+                                            "is-invalid": errors.summary
                                         })} 
                                         name="summary" 
                                         value={this.state.summary || ""}
