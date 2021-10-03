@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import  {getProjectTask, updateProjectTask} from '../../../actions/backlogActions';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import { Link } from 'react-router-dom';
 
 class UpdateProjectTask extends Component {
     constructor() {
@@ -94,9 +95,9 @@ class UpdateProjectTask extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-8 m-auto">
-                            <a href="#" className="btn btn-light">
+                            <Link to={`/projectBoard/${this.state.projectIdentifier}`} className="btn btn-light">
                                 Back to Project Board
-                            </a>
+                            </Link>
                             <h4 className="display-4 text-center">Update Project Task</h4>
                             <p className="lead text-center">Project Name + Project Code</p>
                             <form onSubmit={this.onSubmit}>
