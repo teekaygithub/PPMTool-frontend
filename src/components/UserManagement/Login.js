@@ -31,6 +31,16 @@ class Login extends Component {
         this.props.login(LoginRequest);
     }
 
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.security.validToken) {
+            this.props.history.push("/dashboard");
+        }
+
+        if (nextProps.errors) {
+            this.setState({errors: nextProps.errors});
+        }
+    }
+
     render() {
         const {errors} = this.state;
         return (
@@ -80,12 +90,13 @@ class Login extends Component {
 
 const mapStateToProps = state => ({
     security: state.security,
-    errors: state.errors
+    errors: state.errors,
 });
 
 Login.propTypes = {
     login: PropTypes.func.isRequired,
-    errors: PropTypes.object.isRequired
+    errors: PropTypes.object.isRequired,
+    security: PropTypes.object.isRequired
 }
 
 export default connect(mapStateToProps, {login})(Login);
