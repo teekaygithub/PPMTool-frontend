@@ -69,10 +69,8 @@ class Header extends Component {
         let headerLinks;
 
         if (validToken && user) {
-            console.log("auth header");
             headerLinks = userIsAuthenticated;
         } else {
-            console.log("nonauth header");
             headerLinks = userIsNotAuthenticated;
         }
 
